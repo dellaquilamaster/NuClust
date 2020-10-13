@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+
+nuclustconf_out=''
+for i in "$@"
+do
+case $i in
+    --libs)
+    nuclustconf_out="$nuclustconf_out-L${NuClustSrc}lib -lnuclear_masses -lEnergyLossModule -lSRIMEnergyLossModule -lRelativisticKinematics "
+    shift # past argument=value
+    ;;
+    --cflags)
+    nuclustconf_out="$nuclustconf_out-I${NuClustSrc}include "
+    shift # past argument=value
+    ;;
+    *)
+          # unknown option
+    echo "Unknown argument \"$i\"!"
+    ;;
+esac
+done;
+
+echo $nuclustconf_out
