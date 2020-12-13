@@ -12,7 +12,7 @@ fEnergyLossPrecision(0.001)
   if(fDataPath.find_last_of('/')==fDataPath.length()-1) {
     fDataPath.assign(fDataPath.substr(0,fDataPath.find_last_of('/')));
   }
-
+  
   NucData=new nuclear_masses(Form("%s/masses.conf", fDataPath.c_str()));
 }
 
@@ -27,13 +27,13 @@ void EnergyLossModule::Clear()
 {
   for(std::map<std::string,std::vector <double>>::iterator it = ParticleEnergy.begin(); it!=ParticleEnergy.end(); it++) {
     std::string TheElement(it->first);
-    (it->second).clear();
+    if(it->second.size()) (it->second).clear();
     for(int i=0; i<NUM_MODELS; i++) {
       if((LiseELoss[i])[TheElement].size()) {
         (LiseELoss[i])[TheElement].clear();
       }
     }
-    ParticleEnergyRange[TheElement].clear();
+    if(ParticleEnergyRange[TheElement].size()) ParticleEnergyRange[TheElement].clear();
     for(int i=0; i<NUM_RANGE_MODELS; i++) {
       if((LiseRange[i])[TheElement].size()) {
         (LiseRange[i])[TheElement].clear();
