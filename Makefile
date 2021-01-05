@@ -6,13 +6,15 @@ all:
 	$(MAKE) -C SRIMEnergyLossModule  ;			$(MAKE) -C SRIMEnergyLossModule install    
 	$(MAKE) -C LISEEnergyLossModule  ;			$(MAKE) -C LISEEnergyLossModule install
 	$(MAKE) -C RunningInfo  ;				$(MAKE) -C RunningInfo install
+	$(MAKE) -C PixelizedDetectorData  ;			$(MAKE) -C PixelizedDetectorData install
 
 root:
 	$(MAKE) -C nuclear_masses  ;				$(MAKE) -C nuclear_masses install
 	$(MAKE) -C RelativisticKinematics  ;			$(MAKE) -C RelativisticKinematics install
 	$(MAKE) -C SRIMEnergyLossModule  ;			$(MAKE) -C SRIMEnergyLossModule install    
 	$(MAKE) -C LISEEnergyLossModule  ;			$(MAKE) -C LISEEnergyLossModule install
-	$(MAKE) -C RunningInfo  ;			$(MAKE) -C RunningInfo install
+	$(MAKE) -C RunningInfo  ;				$(MAKE) -C RunningInfo install
+	$(MAKE) -C PixelizedDetectorData  ;			$(MAKE) -C PixelizedDetectorData install
 
 install:
 	$(MAKE) -C nuclear_masses install
@@ -20,6 +22,7 @@ install:
 	$(MAKE) -C SRIMEnergyLossModule install    
 	$(MAKE) -C LISEEnergyLossModule install
 	$(MAKE) -C RunningInfo install
+	$(MAKE) -C PixelizedDetectorData install
 
 distclean:
 	$(MAKE) -C nuclear_masses distclean
@@ -27,6 +30,7 @@ distclean:
 	$(MAKE) -C SRIMEnergyLossModule distclean
 	$(MAKE) -C LISEEnergyLossModule distclean
 	$(MAKE) -C RunningInfo distclean
+	$(MAKE) -C PixelizedDetectorData distclean
 
 clean:
 	$(MAKE) -C nuclear_masses clean
@@ -34,3 +38,4 @@ clean:
 	$(MAKE) -C SRIMEnergyLossModule clean
 	$(MAKE) -C LISEEnergyLossModule clean
 	$(MAKE) -C RunningInfo clean
+	$(MAKE) -C PixelizedDetectorData clean
