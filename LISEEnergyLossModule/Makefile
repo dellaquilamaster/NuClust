@@ -9,6 +9,8 @@ INCLUDES  := -I$(NuClustSrc)
 
 CXXFLAGS  += $(INCLUDES) -std=c++11 -fPIC -O3 -Wall -Wpedantic
 
+RLIBS     := -L$(NuClustSrc)lib -lnuclear_masses
+
 ENERGYLOSSMODULE_LIB := libEnergyLossModule.$(DllSuf)
 SRCS = $(wildcard *.$(SrcSuf))
 OBJS = $(patsubst %.$(SrcSuf), %.$(ObjSuf), $(SRCS))
