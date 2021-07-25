@@ -6,7 +6,7 @@ for i in "$@"
 do
 case $i in
     --libs)
-    nuclustconf_out="$nuclustconf_out-L${NuClustSrc}lib -lnuclear_masses -lEnergyLossModule -lSRIMEnergyLossModule -lRelativisticKinematics -lRunningInfo -lPixelizedDetectorData -lParticleIdentificationTools "
+    nuclustconf_out="$nuclustconf_out-L${NuClustSrc}lib -lnuclear_masses -lEnergyLossModule -lSRIMEnergyLossModule -lRelativisticKinematics -lRunningInfo -lPixelizedDetectorData -lPixelizedOSCARData -lParticleIdentificationTools "
     shift # past argument=value
     ;;
     --cflags)

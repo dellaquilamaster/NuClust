@@ -7,6 +7,7 @@ all:
 	$(MAKE) -C LISEEnergyLossModule  ;			$(MAKE) -C LISEEnergyLossModule install
 	$(MAKE) -C RunningInfo  ;				$(MAKE) -C RunningInfo install
 	$(MAKE) -C PixelizedDetectorData  ;			$(MAKE) -C PixelizedDetectorData install
+	$(MAKE) -C PixelizedOSCARData  ;			$(MAKE) -C PixelizedOSCARData install
 	$(MAKE) -C ParticleIdentificationTools  ;		$(MAKE) -C ParticleIdentificationTools install
 
 root:
@@ -16,6 +17,7 @@ root:
 	$(MAKE) -C LISEEnergyLossModule  ;			$(MAKE) -C LISEEnergyLossModule install
 	$(MAKE) -C RunningInfo  ;				$(MAKE) -C RunningInfo install
 	$(MAKE) -C PixelizedDetectorData  ;			$(MAKE) -C PixelizedDetectorData install
+	$(MAKE) -C PixelizedOSCARData  ;			$(MAKE) -C PixelizedOSCARData install
 	$(MAKE) -C ParticleIdentificationTools  ;		$(MAKE) -C ParticleIdentificationTools install
 
 install:
@@ -25,6 +27,7 @@ install:
 	$(MAKE) -C LISEEnergyLossModule install
 	$(MAKE) -C RunningInfo install
 	$(MAKE) -C PixelizedDetectorData install
+	$(MAKE) -C PixelizedOSCARData install
 	$(MAKE) -C ParticleIdentificationTools install
 
 distclean:
@@ -34,6 +37,7 @@ distclean:
 	$(MAKE) -C LISEEnergyLossModule distclean
 	$(MAKE) -C RunningInfo distclean
 	$(MAKE) -C PixelizedDetectorData distclean
+	$(MAKE) -C PixelizedOSCARData distclean
 	$(MAKE) -C ParticleIdentificationTools distclean
 
 clean:
@@ -43,4 +47,5 @@ clean:
 	$(MAKE) -C LISEEnergyLossModule clean
 	$(MAKE) -C RunningInfo clean
 	$(MAKE) -C PixelizedDetectorData clean
+	$(MAKE) -C PixelizedOSCARData clean
 	$(MAKE) -C ParticleIdentificationTools clean
