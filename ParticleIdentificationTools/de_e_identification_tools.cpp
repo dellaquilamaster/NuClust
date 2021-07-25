@@ -173,7 +173,7 @@ double de_e_identification_tools::get_mass(int charge, double de, double fast)
 //Return the mass by the Charity formula
 //PRC 58(1998)1073
 //____________________________________________________
-double get_mass_charity(double Z)
+double de_e_identification_tools::get_mass_charity(double Z)
 {
   double A;
   
