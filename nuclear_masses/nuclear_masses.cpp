@@ -8,7 +8,7 @@ UMA_MeV(931.494028)
   std::string line;
   int N,Z,A;
   double mass;
-  char element[2];
+  char element[3];
   std::fstream file_in;
   file_in.open(file_conf_name, std::ios::in);
   if (!file_in.is_open()) return;
