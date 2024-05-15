@@ -34,6 +34,7 @@ int de_e_identification_tools::get_charge(double de, double fast, double *zeta)
   double the_unsigned_distance;
   double the_best_distance=1E6;
   int ztest, atest;
+  int zmintest=fZmin, zmaxtest=fZmax;
   double amass=0,amassp=0,amassm=0;
   bool found = false;
   
@@ -41,7 +42,7 @@ int de_e_identification_tools::get_charge(double de, double fast, double *zeta)
   *zeta = 0;
   while(iter < maxiter) {
     (iter)++;
-    ztest = (fZmin + fZmax) / 2;
+    ztest = (zmintest + zmaxtest) / 2;
     atest = get_mass_charity(ztest);
     
     if(atest==1)atest=2;
@@ -54,21 +55,21 @@ int de_e_identification_tools::get_charge(double de, double fast, double *zeta)
       izeta=ztest;
     }
     
-    if(fZmin==fZmax) {
+    if(zmintest==zmaxtest) {
       found = true;
       break;
     }
-    if(fZmin==fZmax-1) {
-      if(ztest==fZmin) fZmin=fZmax;
-      else fZmax=fZmin;
+    if(zmintest==zmaxtest-1) {
+      if(ztest==zmintest) zmintest=zmaxtest;
+      else zmaxtest=zmintest;
       continue;
     }  
     if((de - yy)>=0) {
-      fZmin = ztest;
+      zmintest = ztest;
       continue;
     }
     else {
-      fZmax = ztest;
+      zmaxtest = ztest;
       continue;
     }
   }
